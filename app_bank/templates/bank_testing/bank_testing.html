@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Тестирование{% endblock %}
+{% block content %}
+
+<div class="log__container flex">
+    <h2 class="log__title">Профильное тестирование</h2>
+    {% if request.user.is_authenticated %}
+    <div class="form__container">
+        <form class="form__form" method="post">
+            {% csrf_token %}
+            <div class="form__block flex">
+                <h4 class="form__title title-reset">{{ form.one.label }}</h4>
+                <span class="form__field">{{ form.one }}</span>
+            </div>
+            <div class="form__block flex">
+                <h4 class="form__title title-reset">{{ form.two.label }}</h4>
+                <span class="form__field">{{ form.two }}</span>
+            </div>
+            <div class="form__block flex">
+                <h4 class="form__title title-reset">{{ form.three.label }}</h4>
+                <span class="form__field">{{ form.three }}</span>
+            </div>
+            <div class="form__block flex">
+                <h4 class="form__title title-reset">{{ form.four.label }}</h4>
+                <span class="form__field">{{ form.four }}</span>
+            </div>
+            <div class="form__block flex">
+                <h4 class="form__title title-reset">{{ form.five.label }}</h4>
+                <span class="form__field">{{ form.five }}</span>
+            </div>
+            <div class="form__block flex">
+                <h4 class="form__title title-reset">{{ form.six.label }}</h4>
+                <span class="form__field">{{ form.six }}</span>
+            </div>
+            <div class="form__block flex">
+                <h4 class="form__title title-reset">{{ form.seven.label }}</h4>
+                <span class="form__field">{{ form.seven }}</span>
+            </div>
+            <div class="form__block flex">
+                <h4 class="form__title title-reset">{{ form.eight.label }}</h4>
+                <span class="form__field">{{ form.eight }}</span>
+            </div>
+            <div class="form__block flex">
+                <h4 class="form__title title-reset">{{ form.nine.label }}</h4>
+                <span class="form__field">{{ form.nine }}</span>
+            </div>
+            <div class="form__block flex">
+                <h4 class="form__title title-reset">{{ form.ten.label }}</h4>
+                <span class="form__field">{{ form.ten }}</span>
+            </div>
+            <div class="form__btn__block flex">
+                <button class="form__btn-test btn-reset" type="submit">Ответить</button>
+            </div>
+        </form>
+    </div>
+    {% else %}
+    <div class="home__container">
+        <p class="laptop-list__descr top_descr">Для прохождения тестирования войдите в аккаунт, или зарегистрируйтесь</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

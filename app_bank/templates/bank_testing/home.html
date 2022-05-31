@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Главная страница{% endblock %}
+{% block content %}
+    <div class="home__container">
+        {% if request.user.is_authenticated %}
+            <a class="form__btn home__btn btn-reset" href="{% url 'bank_testing' %}">пройти тест</a>
+        {% else %}
+            <p class="home__descr top_descr">Для прохождения тестирования войдите в аккаунт, или зарегистрируйтесь</p>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Результаты тестирования{% endblock %}
+{% block content %}
+    <div class="home__container">
+        <h2 class="log__title result__title">Результаты тестирования</h2>
+        <p class="home__descr">Ваш результат: <b>{{ percent }}%</b></p>
+        <p class="home__descr">{{ result_text }}</p>
+    </div>
+{% endblock %}
